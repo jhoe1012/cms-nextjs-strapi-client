@@ -1,20 +1,16 @@
-async function loader() {
-  const path = "/api/home-page";
-  const BASE_URL = "http://localhost:1337";
-  const url = new URL(path, BASE_URL);
+import { BlockRenderer } from "@/components/blocks/BlockRenderer";
+import { getHomePage } from "@/data/loaders";
+import { notFound } from "next/navigation";
 
-  const response = await fetch(url.href);
-  const data = await response.json();
+async function loader() {
+  const data = await getHomePage();
+  if (!data) notFound;
   return { ...data.data };
 }
 
 export default async function HomeRoute() {
   const data = await loader();
-  console.log(data);
-  return (
-    <div>
-      <h1 className="font-bold text-7xl">{data.title}</h1>
-      <p>{data.description}</p>
-    </div>
-  );
+  const blocks = data?.blocks || [];
+  console.log(blocks[0]);
+  return <BlockRenderer blocks={blocks} />;
 }
