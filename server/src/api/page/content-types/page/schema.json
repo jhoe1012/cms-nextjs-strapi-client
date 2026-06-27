@@ -27,6 +27,11 @@
     "slug": {
       "type": "uid",
       "targetField": "title"
+    },
+    "header": {
+      "type": "component",
+      "component": "layout.header",
+      "repeatable": false
     }
   }
 }

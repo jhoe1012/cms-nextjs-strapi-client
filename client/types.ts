@@ -49,3 +49,20 @@ export interface InfoBlockProps extends Base<"blocks.info-block"> {
   image: ImageProps;
   cta?: LinkProps;
 }
+
+export interface HeaderProps {
+  data: {
+    logo: LogoProps;
+    navigation: LinkProps[];
+    cta: LinkProps;
+  };
+}
+
+export interface FooterProps {
+  data: {
+    logo: LogoProps;
+    navigation: LinkProps[];
+    policies: LinkProps[];
+    copy: string;
+  };
+}
