@@ -11,6 +11,5 @@ async function loader() {
 export default async function HomeRoute() {
   const data = await loader();
   const blocks = data?.blocks || [];
-  console.log(blocks[0]);
   return <BlockRenderer blocks={blocks} />;
 }

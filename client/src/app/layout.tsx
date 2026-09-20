@@ -1,5 +1,5 @@
-import { Footer } from "@/components/blocks/layout/Footer";
-import { Header } from "@/components/blocks/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
 import { getGlobalSettings } from "@/data/loaders";
 import "@/sass/main.scss";
 import type { Metadata } from "next";

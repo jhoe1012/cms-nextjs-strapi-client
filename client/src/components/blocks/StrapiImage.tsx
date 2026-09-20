@@ -4,7 +4,7 @@ import Image from "next/image";
 interface StrapiImageProps {
   src: string;
   alt: string;
-  className: string;
+  className?: string;
   [key: string]: string | number | boolean | undefined;
 }
 

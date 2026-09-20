@@ -76,6 +76,17 @@ const pageBySlugQuery = (slug: string) =>
               cta: true,
             },
           },
+          "blocks.featured-article": {
+            populate: {
+              image: {
+                fields: ["url", "alternativeText"],
+              },
+              link: true,
+            },
+          },
+          "blocks.subscribe": {
+            populate: true,
+          },
         },
       },
     },
@@ -123,6 +134,5 @@ export async function getGlobalSettings() {
   const path = "api/global";
   const url = new URL(path, BASE_URL);
   url.search = globalSettingQuery;
-  console.log(url.href);
   return await fetchAPI(url.href, { method: "GET" });
 }

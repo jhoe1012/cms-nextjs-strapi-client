@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { FooterProps } from "../../../../types";
-import { StrapiImage } from "../StrapiImage";
+import { FooterProps } from "../../../types";
+import { StrapiImage } from "../blocks/StrapiImage";
 
 export function Footer({ data }: FooterProps) {
   if (!data) return null;

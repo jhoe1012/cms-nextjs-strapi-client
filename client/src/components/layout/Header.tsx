@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { HeaderProps } from "../../../../types";
-import { StrapiImage } from "../StrapiImage";
+import { HeaderProps } from "../../../types";
+import { StrapiImage } from "../blocks/StrapiImage";
 
 export function Header({ data }: HeaderProps) {
   const pathname = usePathname();
